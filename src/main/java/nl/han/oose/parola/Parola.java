@@ -13,5 +13,5 @@ public class Parola {
 //    public void openCreditwinkel(){};
 //    public float koopCredits(int hoeveelheid){}
 //    public void betaal(float bedrag){}
-    //dit is een test
+
 }

@@ -1,4 +1,7 @@
-package nl.han.oose.parola.quiz;
+package nl.han.oose.parola.quiz.vraag;
+
+import nl.han.oose.parola.quiz.Observer;
+import nl.han.oose.parola.quiz.Subject;
 
 public class Vraag implements Subject {
     private boolean actief;

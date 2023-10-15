@@ -1,7 +1,5 @@
 package nl.han.oose.parola.speler;
 
-import nl.han.oose.parola.quiz.Vraag;
-
 public class Speler {
     private String gebruikersnaam;
     private String wachtwoord;
