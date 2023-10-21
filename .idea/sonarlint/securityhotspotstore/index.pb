@@ -62,3 +62,5 @@ w
 G.idea/sonarlint/issuestore/2/6/26ae7bd94b567ce2fe8338ee4dc7ff10ca76d935,a\3\a36fc61d7aac7d1c00ae009a323d6694d453d927
 w
 G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
+d
+4src/main/java/nl/han/oose/parola/quiz/Speeltijd.java,5\1\51d5335fac100f0884bf3e91498070023bb9e1ef

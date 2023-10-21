@@ -13,7 +13,7 @@ public class Quiz implements Observer {
     private List<Score> scores = new ArrayList<>();
     private List<Vraag> quizVragen = new ArrayList<>();
 
-    private List<Speeltijd> speeltijden = new ArrayList<>();
+    private List<SpelerSpel> spellen = new ArrayList<>();
 
     @Override
     public void update() {
@@ -21,12 +21,13 @@ public class Quiz implements Observer {
     }
 
     public void startSpeeltijd(String spelernaam) {
-        speeltijden.add(new Speeltijd(spelernaam));
+        spellen.add(new SpelerSpel(spelernaam));
     }
 
     public List<Character> verwerkAntwoorden(Speler speler){
-        int speeltijd = getSpeeltijd(speler.getGebruikersnaam());
-        Score score = new Score(speeltijd, speler.getGebruikersnaam());
+        SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
+
+        Score score = new Score(spel.getSpeeltijd(), speler.getGebruikersnaam());
         scores.add(score);
 
         for (Vraag vraag : quizVragen) {
@@ -41,10 +42,42 @@ public class Quiz implements Observer {
         return score.getScoreLetters();
     }
 
-    private Integer getSpeeltijd(String spelernaam) {
-        for (Speeltijd speeltijd : speeltijden) {
-            if (Objects.equals(speeltijd.getSpelernaam(), spelernaam)) {
-                speeltijd.getSpeeltijd();
+    public String getVraag(String spelernaam) {
+        SpelerSpel spel = getSpelerSpel(spelernaam);
+        Vraag vraag = quizVragen.get(spel.getVraagNr());
+        spel.verhoogVraagNr();
+        return vraag.getVraag();
+    }
+
+    public boolean isQuizAfgelopen(String spelernaam) {
+        return (getSpelerSpel(spelernaam).getVraagNr()) > quizVragen.size();
+    }
+
+    public void bewaarSpelerAntwoord(Speler speler, String antwoord) {
+        SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
+        int vraagNr = spel.getVraagNr();
+        String vraagString = quizVragen.get(vraagNr).getVraag();
+        speler.bewaarSpelerAntwoord(antwoord, vraagString);
+    }
+
+    public int getScore(String spelernaam, String woord) {
+        Score spelerScore = getSpelerScore(spelernaam);
+        return spelerScore.getScore(woord);
+    }
+
+    private SpelerSpel getSpelerSpel(String spelernaam) {
+        for (SpelerSpel spel : spellen) {
+            if (Objects.equals(spel.getSpelernaam(), spelernaam)) {
+                return spel;
+            }
+        }
+        return null;
+    }
+
+    private Score getSpelerScore(String spelernaam) {
+        for (Score score : scores) {
+            if (Objects.equals(score.getSpeler(), spelernaam)) {
+                return score;
             }
         }
         return null;
