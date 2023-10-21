@@ -3,47 +3,50 @@ package nl.han.oose.parola.quiz;
 import nl.han.oose.parola.quiz.score.Score;
 import nl.han.oose.parola.quiz.vraag.Vraag;
 import nl.han.oose.parola.speler.Speler;
-import nl.han.oose.parola.speler.SpelerAntwoord;
 
-import java.security.PrivateKey;
-import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Quiz implements Observer {
-    private int kosten;
-    private Score score;
-    private Vraag vraag;
-    private Speler speler;
-    private char letter;
-    private List<Character> scoreLetters;
-    private char[] letters;
-    private String[] antwoorden;
-    private char nullChar = '\0';
+    private int kosten = 40;
+    private List<Score> scores = new ArrayList<>();
+    private List<Vraag> quizVragen = new ArrayList<>();
 
-    public void setKosten(int kosten) {
-        this.kosten = kosten;
-        update();
-    }
-    public void setScoreLetters(char[] scoreLetters) {
-        this.letters = scoreLetters;
-    }
+    private List<Speeltijd> speeltijden = new ArrayList<>();
 
     @Override
     public void update() {
-        char[] verwerkteAntwoorden = verwerkAntwoorden();
+        //CRUD functionaliteit is niet geïmplementeerd
     }
 
-    public char[] verwerkAntwoorden(){
-       score = new Score(11,"fgh");
-        for (int i = 0; i < 8; i++) {
-            antwoorden = vraag.getJuisteAntwoorden();
+    public void startSpeeltijd(String spelernaam) {
+        speeltijden.add(new Speeltijd(spelernaam));
+    }
 
-            letter = speler.getScoreLetter(vraag, antwoorden);
-            if (letter!=nullChar){
+    public List<Character> verwerkAntwoorden(Speler speler){
+        int speeltijd = getSpeeltijd(speler.getGebruikersnaam());
+        Score score = new Score(speeltijd, speler.getGebruikersnaam());
+        scores.add(score);
+
+        for (Vraag vraag : quizVragen) {
+            List<String> antwoorden = vraag.getJuisteAntwoorden();
+            Character letter = speler.getScoreLetter(vraag.getVraag(), antwoorden);
+
+            if (letter != null){
                 score.addScoreLetter(letter);
             }
         }
-        scoreLetters = score.getScoreLetters();
 
+        return score.getScoreLetters();
+    }
+
+    private Integer getSpeeltijd(String spelernaam) {
+        for (Speeltijd speeltijd : speeltijden) {
+            if (Objects.equals(speeltijd.getSpelernaam(), spelernaam)) {
+                speeltijd.getSpeeltijd();
+            }
+        }
+        return null;
     }
 }

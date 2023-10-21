@@ -9,7 +9,7 @@ import java.util.List;
 public class Vraag implements Subject {
     private boolean actief;
     private String tekst;
-    private String juisteAntwoorden;
+    private List<String> juisteAntwoorden = new ArrayList<>();
     private String categorie;
     private List<Observer> observers = new ArrayList<>();
 
@@ -23,7 +23,7 @@ public class Vraag implements Subject {
         sendUpdate();
     }
 
-    public void setJuisteAntwoorden(String juisteAntwoorden) {
+    public void setJuisteAntwoorden(List<String> juisteAntwoorden) {
         this.juisteAntwoorden = juisteAntwoorden;
         sendUpdate();
     }
@@ -39,7 +39,7 @@ public class Vraag implements Subject {
     }
 
     @Override
-    public void deAttach(Observer observer) {
+    public void detach(Observer observer) {
         observers.remove(observer);
     }
 
@@ -50,7 +50,11 @@ public class Vraag implements Subject {
         }
     }
 
-    public String[] getJuisteAntwoorden(){
-        return new String[]{juisteAntwoorden};
+    public List<String> getJuisteAntwoorden(){
+        return juisteAntwoorden;
+    }
+
+    public String getVraag() {
+        return tekst;
     }
 }

@@ -1,0 +1,23 @@
+
+{
+java:S1450"YRemove the "antwoorden" field and declare it as a local variable in the relevant methods.(úšÁøÿÿÿÿ8•ì¬µ1
+r
+java:S1450"URemove the "kosten" field and declare it as a local variable in the relevant methods.(¾ƒñ8–ì¬µ1
+w
+java:S1450"URemove the "letter" field and declare it as a local variable in the relevant methods.(İòÒ†øÿÿÿÿ8–ì¬µ1
+s
+java:S1450"VRemove the "letters" field and declare it as a local variable in the relevant methods.(â˜Õë8–ì¬µ1
+v
+java:S1450"TRemove the "score" field and declare it as a local variable in the relevant methods.(‰À—áüÿÿÿÿ8—ì¬µ1
+w
+java:S1450"[Remove the "scoreLetters" field and declare it as a local variable in the relevant methods.(òŒ 8—ì¬µ1
+i
+java:S1854!"GRemove this useless assignment to local variable "verwerkteAntwoorden".(¬ŸÜ¤üÿÿÿÿ8°ì¬µ1
+Z
+java:S1481!"8Remove this unused "verwerkteAntwoorden" local variable.(¬ŸÜ¤üÿÿÿÿ8²ì¬µ1
+G
+java:S1068"*Remove this unused "kosten" private field.(¾ƒñ8Áì¬µ1
+L
+java:S1068"0Remove this unused "scoreLetters" private field.(òŒ 8Áì¬µ1
+H
+java:S1068"+Remove this unused "letters" private field.(â˜Õë8Áì¬µ1
