@@ -62,3 +62,5 @@ f
 6src/main/java/nl/han/oose/parola/quiz/vraag/Vraag.java,9\c\9c123160076ace50e3d00da3092ff77844e474d7
 o
 ?src/main/java/nl/han/oose/parola/utils/WoordenlijstScanner.java,1\8\189bb3f35f5645e018af47a88366055d1edd3551
+d
+4src/main/java/nl/han/oose/parola/quiz/Speeltijd.java,5\1\51d5335fac100f0884bf3e91498070023bb9e1ef

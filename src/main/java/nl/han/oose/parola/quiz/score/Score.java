@@ -106,4 +106,8 @@ public class Score {
         }
         return false;
     }
+
+    public String getSpeler() {
+        return spelernaam;
+    }
 }
