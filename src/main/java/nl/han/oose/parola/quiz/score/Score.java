@@ -2,6 +2,10 @@ package nl.han.oose.parola.quiz.score;
 
 import nl.han.oose.parola.utils.WoordenlijstScanner;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -113,4 +117,5 @@ public class Score {
     public String getSpeler() {
         return spelernaam;
     }
+
 }

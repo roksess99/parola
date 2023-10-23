@@ -7,6 +7,7 @@ import nl.han.oose.parola.speler.Speler;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Parola {
@@ -44,7 +45,18 @@ public class Parola {
         huidigeQuiz.bewaarSpelerAntwoord(speler, antwoord);
     }
 
-//    private Quiz getOngespeeldeQuiz(String spelernaam){}
+    private Quiz getOngespeeldeQuiz(String spelernaam){
+        Speler speler = getSpeler(spelernaam);
+        List<String> gespeeldeQuizzen = speler.getGespeeldeQuizzen();
+        List<Quiz> beschikbareQuizzen = quizzen.stream()
+                .filter(quiz -> !gespeeldeQuizzen.contains(quiz.getQuiznaam()))
+                .collect(Collectors.toList());
+        if (!beschikbareQuizzen.isEmpty()){
+            return beschikbareQuizzen.get(new Random().nextInt(beschikbareQuizzen.size()));
+        }else {
+            return quizzen.get(new Random().nextInt(quizzen.size()));
+        }
+    }
 
     public void startQuiz(String spelernaam){
         Speler speler = getSpeler(spelernaam);

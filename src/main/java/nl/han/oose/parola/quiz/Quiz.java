@@ -4,12 +4,17 @@ import nl.han.oose.parola.quiz.score.Score;
 import nl.han.oose.parola.quiz.vraag.Vraag;
 import nl.han.oose.parola.speler.Speler;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Quiz implements Observer {
     private int kosten = 40;
+    private String quizNaam;
     private List<Score> scores = new ArrayList<>();
     private List<Vraag> quizVragen = new ArrayList<>();
 
@@ -38,8 +43,18 @@ public class Quiz implements Observer {
                 score.addScoreLetter(letter);
             }
         }
-
+        gespeeldeQuizzen(speler.getGebruikersnaam(), score);
         return score.getScoreLetters();
+    }
+
+    private void gespeeldeQuizzen(String spelerNaam, Score score){
+        final String gespeelde_quizzen = "src/main/resources/quiz/gespeelde_quizzen.csv";
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(gespeelde_quizzen))){
+            writer.write(spelerNaam + "," + quizNaam + score);
+            writer.newLine();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public String getVraag(String spelernaam) {
@@ -81,5 +96,9 @@ public class Quiz implements Observer {
             }
         }
         return null;
+    }
+
+    public String getQuiznaam() {
+        return quizNaam;
     }
 }

@@ -1,5 +1,6 @@
 package nl.han.oose.parola.speler;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -51,5 +52,22 @@ public class Speler {
 
     public String getWachtwoord() {
         return wachtwoord;
+    }
+
+    public List<String> getGespeeldeQuizzen(){
+        List<String> gespeeldeQuizzen = new ArrayList<>();
+        final String gespeeldeQuizzenCSV = "src/main/resources/quiz/gespeelde_quizzen.csv";
+        try(BufferedReader reader = new BufferedReader(new FileReader(gespeeldeQuizzenCSV))) {
+            String row;
+            while ((row = reader.readLine()) != null){
+                String[] result = row.split(",");
+                if (result.length >= 2 && result[0].equals(gebruikersnaam)){
+                    gespeeldeQuizzen.add(result[1]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return gespeeldeQuizzen;
     }
 }
