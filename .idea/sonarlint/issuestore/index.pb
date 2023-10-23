@@ -4,8 +4,6 @@
 Parola.iml,2\6\26ae7bd94b567ce2fe8338ee4dc7ff10ca76d935
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-\
-,src/main/java/nl/han/oose/parola/Parola.java,d\7\d7315527d69de6882223187e62718dbfb5dac647
 _
 /src/main/java/nl/han/oose/parola/quiz/Quiz.java,9\3\93a4171be64fb0d4fad1a85f04aa78ec4b4f602b
 c
@@ -45,8 +43,6 @@ S
 Å
 Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,2\c\2cabb939da04d3de3a200bf2b575690e1a16316d
 Å
-Q.idea/sonarlint/securityhotspotstore/d/7/d7315527d69de6882223187e62718dbfb5dac647,c\2\c221e3a41d18276252587366bcbe892067af9da2
-Å
 Q.idea/sonarlint/securityhotspotstore/2/6/26ae7bd94b567ce2fe8338ee4dc7ff10ca76d935,1\7\170f8dab3b8f3a596d9a0c80cf4f44b229d122d7
 w
 G.idea/sonarlint/issuestore/2/6/26ae7bd94b567ce2fe8338ee4dc7ff10ca76d935,a\3\a36fc61d7aac7d1c00ae009a323d6694d453d927
@@ -62,5 +58,11 @@ f
 6src/main/java/nl/han/oose/parola/quiz/vraag/Vraag.java,9\c\9c123160076ace50e3d00da3092ff77844e474d7
 o
 ?src/main/java/nl/han/oose/parola/utils/WoordenlijstScanner.java,1\8\189bb3f35f5645e018af47a88366055d1edd3551
-d
-4src/main/java/nl/han/oose/parola/quiz/Speeltijd.java,5\1\51d5335fac100f0884bf3e91498070023bb9e1ef
+g
+7src/main/java/nl/han/oose/parola/controller/Parola.java,b\c\bcadd502be0f4f1044b1f3ca8bbcb8ad70f19796
+e
+5src/main/java/nl/han/oose/parola/quiz/SpelerSpel.java,c\0\c0795e7255294b663f0beb8318aaa94a608e9c74
+q
+Asrc/main/java/nl/han/oose/parola/controller/ParolaController.java,a\0\a01f273bfc5ee830245184b2bc233d8ed249dd73
+g
+7src/main/java/nl/han/oose/parola/utils/QuizScanner.java,c\2\c20c8c47b30902352edb4e1f2844501dd6947920

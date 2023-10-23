@@ -2,7 +2,10 @@ package nl.han.oose.parola.quiz.score;
 
 import nl.han.oose.parola.utils.WoordenlijstScanner;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class Score {
     private int aantalGoedeAntwoorden;

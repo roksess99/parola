@@ -27,7 +27,7 @@ public class ParolaController {
 
     public void startQuiz(String playername) {
         if (PAROLA.getSpeler(playername) == null) {
-            PAROLA.registreerSpeler(playername, "");
+            PAROLA.registeerSpeler(playername, null);
         }
         PAROLA.startQuiz(playername);
     }
