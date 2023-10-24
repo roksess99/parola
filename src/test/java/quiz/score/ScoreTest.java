@@ -13,7 +13,7 @@ class ScoreTest {
 
     @Test
     void woordMetVerkeerdeLettersGeeftNull() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('v');
         sut.addScoreLetter('i');
@@ -24,7 +24,7 @@ class ScoreTest {
 
     @Test
     void woordMetGoedeLettersGeeftScore() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('v');
         sut.addScoreLetter('i');
@@ -35,7 +35,7 @@ class ScoreTest {
 
     @Test
     void kleinerWoordMetGoedeLettersGeeftScore() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('v');
         sut.addScoreLetter('i');
@@ -49,7 +49,7 @@ class ScoreTest {
 
     @Test
     void woordMetDubbeleScoreLettersGeeftScore() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('l');
         sut.addScoreLetter('p');
@@ -63,7 +63,7 @@ class ScoreTest {
 
     @Test
     void teLangWoordGeeftNull() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('v');
         sut.addScoreLetter('i');
@@ -74,7 +74,7 @@ class ScoreTest {
 
     @Test
     void onbestaandWoordInWoordenlijstGeeftNull() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
 
         sut.addScoreLetter('q');
         sut.addScoreLetter('e');
@@ -87,7 +87,7 @@ class ScoreTest {
 
     @Test
     void getScoreLettersOpScoreLettersZonderKlinkerGeeftExtraKlinkerTerug() {
-        sut = new Score(0, "test");
+        sut = new Score(0, "test", "testQuiz");
         List<Character> scoreletters = new ArrayList<>();
 
         scoreletters.add('q');

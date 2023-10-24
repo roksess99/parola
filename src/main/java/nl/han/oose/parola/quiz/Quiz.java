@@ -5,18 +5,15 @@ import nl.han.oose.parola.quiz.vraag.KortantwoordVraag;
 import nl.han.oose.parola.quiz.vraag.MeerkeuzeVraag;
 import nl.han.oose.parola.quiz.vraag.Vraag;
 import nl.han.oose.parola.speler.Speler;
-import nl.han.oose.parola.utils.QuizScanner;
+import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
+import nl.han.oose.parola.utils.QuizCSV;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Quiz implements Observer {
-    private int kosten = 40;
+    private final int kosten = 40;
     private String quizNaam;
     private List<Score> scores = new ArrayList<>();
     private List<Vraag> quizVragen = new ArrayList<>();
@@ -26,6 +23,7 @@ public class Quiz implements Observer {
     public Quiz (String quizNaam) {
         this.quizNaam = quizNaam;
         voegVragenUitCSVToe();
+        voegScoresUitCSVToe();
     }
 
     @Override
@@ -40,7 +38,7 @@ public class Quiz implements Observer {
     public List<Character> verwerkAntwoorden(Speler speler){
         SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
 
-        Score score = new Score(spel.getSpeeltijd(), speler.getGebruikersnaam());
+        Score score = new Score(spel.getSpeeltijd(), speler.getGebruikersnaam(), quizNaam);
         scores.add(score);
 
         for (Vraag vraag : quizVragen) {
@@ -51,18 +49,7 @@ public class Quiz implements Observer {
                 score.addScoreLetter(letter);
             }
         }
-        gespeeldeQuizzen(speler.getGebruikersnaam(), score);
         return score.getScoreLetters();
-    }
-
-    private void gespeeldeQuizzen(String spelerNaam, Score score){
-        final String gespeelde_quizzen = "src/main/resources/quiz/gespeelde_quizzen.csv";
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(gespeelde_quizzen))){
-            writer.write(spelerNaam + "," + quizNaam + score);
-            writer.newLine();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
     public String getVraag(String spelernaam) {
@@ -112,8 +99,8 @@ public class Quiz implements Observer {
 
 
     private void voegVragenUitCSVToe() {
-        QuizScanner scanner = new QuizScanner();
-        List<String[]> csvLijst = scanner.leesVragen();
+        QuizCSV csv = new QuizCSV();
+        List<String[]> csvLijst = csv.leesVragen();
         for (String[] csvVraag : csvLijst) {
             if (Objects.equals(csvVraag[0], quizNaam)) {
                 Vraag vraag;
@@ -127,6 +114,25 @@ public class Quiz implements Observer {
                 vraag.setTekst(csvVraag[2]);
                 quizVragen.add(vraag);
             }
+        }
+    }
+
+    private void voegScoresUitCSVToe() {
+        GespeeldeQuizzenCSV csv = new GespeeldeQuizzenCSV();
+        List<String[]> csvLijst = csv.getGespeeldeQuizzenQuiznaam(quizNaam);
+        for (String[] bestaandeScore : csvLijst) {
+            String[] letters = bestaandeScore[6].split(",");
+
+            Score score = new Score(
+                    Integer.parseInt(bestaandeScore[2]),
+                    bestaandeScore[3],
+                    Integer.parseInt(bestaandeScore[4]),
+                    Integer.parseInt(bestaandeScore[5]),
+                    letters,
+                    bestaandeScore[0],
+                    bestaandeScore[1]
+            );
+            scores.add(score);
         }
     }
 }

@@ -1,11 +1,8 @@
 package nl.han.oose.parola.quiz.score;
 
+import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
 import nl.han.oose.parola.utils.WoordenlijstScanner;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,11 +19,29 @@ public class Score {
     private List<Character> scoreLetters;
     private ScoreStrategy strategy;
 
-    public Score(int speelTijd, String spelernaam){
+    private String quizNaam;
+
+    public Score(int speelTijd, String spelernaam, String quizNaam){
         this.speelTijd = speelTijd;
         this.spelernaam = spelernaam;
+        this.quizNaam = quizNaam;
 
         scoreLetters = new ArrayList<>();
+        setStrategy(new NormaleScoreStrategy());
+    }
+
+    public Score(int aantalGoedeAntwoorden, String scoreWoord, int speelTijd, int scoreAantal, String[] letters, String spelernaam, String quizNaam){
+        this.scoreWoord = scoreWoord;
+        this.speelTijd = speelTijd;
+        this.spelernaam = spelernaam;
+        this.quizNaam = quizNaam;
+        this.score = scoreAantal;
+
+        scoreLetters = new ArrayList<>();
+        for (int letter = 0; letter < letters.length; letter++) {
+            Character scoreLetter = (letters[letter]).charAt(0);
+            scoreLetters.add(scoreLetter);
+        }
         setStrategy(new NormaleScoreStrategy());
     }
 
@@ -85,6 +100,7 @@ public class Score {
         if (bevatScoreWoordJuisteLetters(woord) && bestaatWoord(woord)) {
             scoreWoord = woord;
             this.score = strategy.berekenEindScore(speelTijd, scoreWoord, aantalGoedeAntwoorden);
+            writeGespeeldeQuiz();
             return score;
         }
         return null;
@@ -118,4 +134,15 @@ public class Score {
         return spelernaam;
     }
 
+    private void writeGespeeldeQuiz(){
+        GespeeldeQuizzenCSV csv = new GespeeldeQuizzenCSV();
+
+        String[] scoreArray = new String[5];
+        scoreArray[0] = String.valueOf(this.aantalGoedeAntwoorden);
+        scoreArray[1] = this.scoreWoord;
+        scoreArray[2] = String.valueOf(this.speelTijd);
+        scoreArray[3] = String.valueOf(this.score);
+        scoreArray[4] = this.scoreLetters.toString();
+        csv.writeGespeeldeQuiz(quizNaam, spelernaam, scoreArray);
+    }
 }

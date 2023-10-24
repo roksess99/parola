@@ -3,6 +3,8 @@ package nl.han.oose.parola.controller;
 import nl.han.oose.parola.creditwinkel.CreditWinkel;
 import nl.han.oose.parola.quiz.Quiz;
 import nl.han.oose.parola.speler.Speler;
+import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
+import nl.han.oose.parola.utils.QuizCSV;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,10 @@ public class Parola {
 
     private Quiz huidigeQuiz;
     private final CreditWinkel creditWinkel = new CreditWinkel();
+
+    public Parola() {
+        voegQuizzenUitCSVToe();
+    }
 
     public void registeerSpeler(String gebruikersnaam, String wachtwoord){
         Speler nieuweSpeler = new Speler(gebruikersnaam, wachtwoord);
@@ -43,19 +49,6 @@ public class Parola {
     public void beantwoordVraag(String spelernaam, String antwoord){
         Speler speler = getSpeler(spelernaam);
         huidigeQuiz.bewaarSpelerAntwoord(speler, antwoord);
-    }
-
-    private Quiz getOngespeeldeQuiz(String spelernaam){
-        Speler speler = getSpeler(spelernaam);
-        List<String> gespeeldeQuizzen = speler.getGespeeldeQuizzen();
-        List<Quiz> beschikbareQuizzen = quizzen.stream()
-                .filter(quiz -> !gespeeldeQuizzen.contains(quiz.getQuiznaam()))
-                .toList();
-        if (!beschikbareQuizzen.isEmpty()){
-            return beschikbareQuizzen.get(new Random().nextInt(beschikbareQuizzen.size()));
-        }else {
-            return quizzen.get(new Random().nextInt(quizzen.size()));
-        }
     }
 
     public void startQuiz(String spelernaam){
@@ -110,5 +103,28 @@ public class Parola {
 
     public boolean isQuizAfgelopen(String spelernaam) {
         return huidigeQuiz.isQuizAfgelopen(spelernaam);
+    }
+
+    private Quiz getOngespeeldeQuiz(String spelernaam){
+        GespeeldeQuizzenCSV csv = new GespeeldeQuizzenCSV();
+        List<String[]> gespeeldeQuizzen = csv.getGespeeldeQuizzenSpelernaam(spelernaam);
+
+        List<Quiz> beschikbareQuizzen = quizzen.stream()
+                .filter(quiz -> !gespeeldeQuizzen.contains(quiz.getQuiznaam()))
+                .toList();
+        if (!beschikbareQuizzen.isEmpty()){
+            return beschikbareQuizzen.get(new Random().nextInt(beschikbareQuizzen.size()));
+        }else {
+            return quizzen.get(new Random().nextInt(quizzen.size()));
+        }
+    }
+
+    private void voegQuizzenUitCSVToe() {
+        QuizCSV csv = new QuizCSV();
+        List<String> quiznamen = csv.leesQuiznamen();
+        for (String quiznaam : quiznamen) {
+            Quiz quiz = new Quiz(quiznaam);
+            quizzen.add(quiz);
+        }
     }
 }

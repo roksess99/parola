@@ -1,16 +1,16 @@
 package utils;
 
-import nl.han.oose.parola.utils.QuizScanner;
+import nl.han.oose.parola.utils.QuizCSV;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class QuizScannerTest {
+public class QuizCSVTest {
 
-    QuizScanner sut;
+    QuizCSV sut;
 
     @Test
     void leesVragenReturnsValuesFromCSV() {
-        sut = new QuizScanner();
+        sut = new QuizCSV();
 
         var vragen = sut.leesVragen();
 
