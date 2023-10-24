@@ -66,3 +66,7 @@ q
 Asrc/main/java/nl/han/oose/parola/controller/ParolaController.java,a\0\a01f273bfc5ee830245184b2bc233d8ed249dd73
 g
 7src/main/java/nl/han/oose/parola/utils/QuizScanner.java,c\2\c20c8c47b30902352edb4e1f2844501dd6947920
+o
+?src/main/java/nl/han/oose/parola/creditwinkel/CreditWinkel.java,0\2\024aa2df658ee22dd684be73d4f7f863f5d82229
+`
+0src/main/java/nl/han/oose/parola/ParolaMain.java,5\7\573f28c7aa4e564f89b31a7e3113198a23bd0b94

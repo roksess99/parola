@@ -23,8 +23,8 @@ public class Vraag implements Subject {
         sendUpdate();
     }
 
-    public void setJuisteAntwoorden(List<String> juisteAntwoorden) {
-        this.juisteAntwoorden = juisteAntwoorden;
+    public void setJuisteAntwoorden(String antwoord) {
+        this.juisteAntwoorden.add(antwoord);
         sendUpdate();
     }
 

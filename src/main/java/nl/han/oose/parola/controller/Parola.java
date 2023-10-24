@@ -50,7 +50,7 @@ public class Parola {
         List<String> gespeeldeQuizzen = speler.getGespeeldeQuizzen();
         List<Quiz> beschikbareQuizzen = quizzen.stream()
                 .filter(quiz -> !gespeeldeQuizzen.contains(quiz.getQuiznaam()))
-                .collect(Collectors.toList());
+                .toList();
         if (!beschikbareQuizzen.isEmpty()){
             return beschikbareQuizzen.get(new Random().nextInt(beschikbareQuizzen.size()));
         }else {

@@ -1,47 +1,48 @@
-quiz1,kort_antwoord,Wat is de hoofdstad van Frankrijk?,,Parijs
+quiz1,kort_antwoord,Wat is de hoofdstad van Frankrijk?,,,,,Parijs
 quiz1,meerkeuze,Wat is de grootste planeet in ons zonnestelsel?,Jupiter,Mars,Venus,Saturnus,Jupiter
-quiz1,kort_antwoord,Wat is 9 keer 7?,,63
+quiz1,kort_antwoord,Wat is 9 keer 7?,,,,,63
 quiz1,meerkeuze,Welk element heeft het symbool 'O' in het periodiek systeem?,Oxygen,Waterstof,IJzer,Koolstof,Oxygen
 quiz1,meerkeuze,Wat is de hoofdstad van Japan?,Beijing,Tokyo,Seoul,Shanghai,Tokyo
-quiz1,kort_antwoord,Wat is de hoofdstad van Canada?,,Ottawa
+quiz1,kort_antwoord,Wat is de hoofdstad van Canada?,,,,,Ottawa
 quiz1,meerkeuze,Wie schilderde de Mona Lisa?,Van Gogh,Picasso,Leonardo da Vinci,Rembrandt,Leonardo da Vinci
-quiz2,kort_antwoord,Wat is de hoofdstad van Spanje?,,Madrid
+quiz1,meerkeuze,Welk land heeft het meeste oppervlakte ter wereld?,Canada,Rusland,China,Brazilië,Rusland
+quiz2,kort_antwoord,Wat is de hoofdstad van Spanje?,,,,,Madrid
 quiz2,meerkeuze,Hoeveel continenten zijn er op aarde?,5,6,7,8,7
-quiz2,kort_antwoord,Wat is 12 gedeeld door 3?,,4
+quiz2,kort_antwoord,Wat is 12 gedeeld door 3?,,,,,4
 quiz2,meerkeuze,Wie schreef "Romeo en Julia"?,William Shakespeare,Mark Twain,Jane Austen,Charles Dickens,William Shakespeare
-quiz2,kort_antwoord,Wat is de hoogste berg ter wereld?,,Mount Everest
+quiz2,kort_antwoord,Wat is de hoogste berg ter wereld?,,,,,Mount Everest
 quiz2,meerkeuze,Wat is de hoofdstad van Australië?,Sydney,Melbourne,Canberra,Perth,Canberra
 quiz2,meerkeuze,Hoeveel planeten zijn er in ons zonnestelsel?,7,8,9,10,8
-quiz2,kort_antwoord,Wat is 15 keer 5?,,75
-quiz3,kort_antwoord,Wat is de hoofdstad van Duitsland?,,Berlijn
+quiz2,kort_antwoord,Wat is 15 keer 5?,,,,,75
+quiz3,kort_antwoord,Wat is de hoofdstad van Duitsland?,,,,,Berlijn
 quiz3,meerkeuze,Wat is de snelste landdier ter wereld?,Tijger,Cheetah,Luipaard,Leeuw,Cheetah
-quiz3,kort_antwoord,Wat is 20 gedeeld door 4?,,5
+quiz3,kort_antwoord,Wat is 20 gedeeld door 4?,,,,,5
 quiz3,meerkeuze,Wie schreef "1984"?,George Orwell,Ernest Hemingway,J.K. Rowling,F. Scott Fitzgerald,George Orwell
-quiz3,kort_antwoord,Wat is de grootste oceaan ter wereld?,,Stille Oceaan
+quiz3,kort_antwoord,Wat is de grootste oceaan ter wereld?,,,,,Stille Oceaan
 quiz3,meerkeuze,Wat is de hoofdstad van Zuid-Afrika?,Johannesburg,Kaapstad,Durban,Pretoria,Pretoria
 quiz3,meerkeuze,Hoeveel kleuren heeft een regenboog?,5,6,7,8,7
-quiz3,kort_antwoord,Wat is 18 keer 3?,,54
+quiz3,kort_antwoord,Wat is 18 keer 3?,,,,,54
 quiz4,meerkeuze,Wat is de grootste planeet in ons zonnestelsel?,Jupiter,Mars,Venus,Saturnus,Jupiter
-quiz4,kort_antwoord,Wat is de hoofdstad van Italië?,,Rome
+quiz4,kort_antwoord,Wat is de hoofdstad van Italië?,,,,,Rome
 quiz4,meerkeuze,Hoeveel gram zit er in een kilogram?,100,500,1000,1500,1000
-quiz4,kort_antwoord,Wat is 7 plus 9?,,16
+quiz4,kort_antwoord,Wat is 7 plus 9?,,,,,16
 quiz4,meerkeuze,Welk element heeft het symbool 'H' in het periodiek systeem?,Helium,Waterstof,IJzer,Koolstof,Waterstof
-quiz4,kort_antwoord,Wat is de hoofdstad van China?,,Peking
+quiz4,kort_antwoord,Wat is de hoofdstad van China?,,,,,Peking
 quiz4,meerkeuze,Welk continent is het grootste?,Afrika,Azië,Noord-Amerika,Zuid-Amerika,Azië
-quiz4,kort_antwoord,Wat is 6 keer 8?,,48
+quiz4,kort_antwoord,Wat is 6 keer 8?,,,,,48
 quiz5,meerkeuze,Wat is de snelste vogel ter wereld?,Struisvogel,Adelaar,Kolibrie,Papegaai,Falco peregrinus (Slechtvalk)
-quiz5,kort_antwoord,Wat is de hoofdstad van Brazilië?,,Brasília
+quiz5,kort_antwoord,Wat is de hoofdstad van Brazilië?,,,,,Brasília
 quiz5,meerkeuze,Hoeveel tanden heeft een volwassen mens gemiddeld?,28,30,32,36,32
-quiz5,kort_antwoord,Wat is 11 minus 4?,,7
+quiz5,kort_antwoord,Wat is 11 minus 4?,,,,,7
 quiz5,meerkeuze,Welk element heeft het symbool 'Na' in het periodiek systeem?,Natrium,IJzer,Koper,Goud,Natrium
-quiz5,kort_antwoord,Wat is de hoofdstad van Rusland?,,Moskou
+quiz5,kort_antwoord,Wat is de hoofdstad van Rusland?,,,,,Moskou
 quiz5,meerkeuze,Hoeveel staten heeft de Verenigde Staten?,48,50,52,54,50
-quiz5,kort_antwoord,Wat is 9 keer 9?,,81
+quiz5,kort_antwoord,Wat is 9 keer 9?,,,,,81
 quiz6,meerkeuze,Wat is de grootste zoogdier op aarde?,Blauwe vinvis,Olifant,Giraffe,Gorilla,Blauwe vinvis
-quiz6,kort_antwoord,Wat is de hoofdstad van India?,,New Delhi
+quiz6,kort_antwoord,Wat is de hoofdstad van India?,,,,,New Delhi
 quiz6,meerkeuze,Hoeveel kilometer zit er in een mijl?,1.6,2.0,2.4,3.2,1.6
-quiz6,kort_antwoord,Wat is 15 gedeeld door 3?,,5
+quiz6,kort_antwoord,Wat is 15 gedeeld door 3?,,,,,5
 quiz6,meerkeuze,Wat is de hoofdstad van Australië?,Sydney,Melbourne,Canberra,Perth,Canberra
-quiz6,kort_antwoord,Wat is de grootste oceaan ter wereld?,,Stille Oceaan
+quiz6,kort_antwoord,Wat is de grootste oceaan ter wereld?,,,,,Stille Oceaan
 quiz6,meerkeuze,Hoeveel planeten zijn er in ons zonnestelsel?,7,8,9,10,8
-quiz6,kort_antwoord,Wat is 14 keer 6?,,84
+quiz6,kort_antwoord,Wat is 14 keer 6?,,,,,84

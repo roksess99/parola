@@ -1,8 +1,11 @@
 package nl.han.oose.parola.quiz;
 
 import nl.han.oose.parola.quiz.score.Score;
+import nl.han.oose.parola.quiz.vraag.KortantwoordVraag;
+import nl.han.oose.parola.quiz.vraag.MeerkeuzeVraag;
 import nl.han.oose.parola.quiz.vraag.Vraag;
 import nl.han.oose.parola.speler.Speler;
+import nl.han.oose.parola.utils.QuizScanner;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -19,6 +22,11 @@ public class Quiz implements Observer {
     private List<Vraag> quizVragen = new ArrayList<>();
 
     private List<SpelerSpel> spellen = new ArrayList<>();
+
+    public Quiz (String quizNaam) {
+        this.quizNaam = quizNaam;
+        voegVragenUitCSVToe();
+    }
 
     @Override
     public void update() {
@@ -80,6 +88,10 @@ public class Quiz implements Observer {
         return spelerScore.getScore(woord);
     }
 
+    public String getQuiznaam() {
+        return quizNaam;
+    }
+
     private SpelerSpel getSpelerSpel(String spelernaam) {
         for (SpelerSpel spel : spellen) {
             if (Objects.equals(spel.getSpelernaam(), spelernaam)) {
@@ -98,7 +110,23 @@ public class Quiz implements Observer {
         return null;
     }
 
-    public String getQuiznaam() {
-        return quizNaam;
+
+    private void voegVragenUitCSVToe() {
+        QuizScanner scanner = new QuizScanner();
+        List<String[]> csvLijst = scanner.leesVragen();
+        for (String[] csvVraag : csvLijst) {
+            if (Objects.equals(csvVraag[0], quizNaam)) {
+                Vraag vraag;
+                if (Objects.equals(csvVraag[1], "kort_antwoord")) {
+                    vraag = new KortantwoordVraag(csvVraag[7]);
+
+                } else {
+                    String[] opties = {csvVraag[3], csvVraag[4], csvVraag[5], csvVraag[6]};
+                    vraag = new MeerkeuzeVraag(opties, csvVraag[7]);
+                }
+                vraag.setTekst(csvVraag[2]);
+                quizVragen.add(vraag);
+            }
+        }
     }
 }
