@@ -1,5 +1,7 @@
 package nl.han.oose.parola.quiz.vraag;
 
+import java.util.Arrays;
+
 public class MeerkeuzeVraag extends Vraag {
     private String[] opties;
 
@@ -14,7 +16,8 @@ public class MeerkeuzeVraag extends Vraag {
         sendUpdate();
     }
 
-    public String[] getOpties() {
-        return opties;
+    @Override
+    public String getVraag() {
+        return tekst + " \nAnswer options: " + Arrays.toString(opties);
     }
 }

@@ -9,6 +9,7 @@ import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
 import nl.han.oose.parola.utils.QuizCSV;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,6 +57,7 @@ public class Quiz implements Observer {
         SpelerSpel spel = getSpelerSpel(spelernaam);
         Vraag vraag = quizVragen.get(spel.getVraagNr());
         spel.verhoogVraagNr();
+
         return vraag.getVraag();
     }
 

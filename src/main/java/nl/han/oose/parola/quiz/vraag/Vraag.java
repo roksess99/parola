@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Vraag implements Subject {
     private boolean actief;
-    private String tekst;
+    protected String tekst;
     private List<String> juisteAntwoorden = new ArrayList<>();
     private String categorie;
     private List<Observer> observers = new ArrayList<>();
