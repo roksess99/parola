@@ -146,6 +146,16 @@ public class Parola {
 
     private void slaSpelersOp() {
         SpelerCSV csv = new SpelerCSV();
-        csv.slaSpelersOp(this.spelers);
+        List<String[]> spelersArray = new ArrayList<>();
+
+        for (Speler speler : this.spelers) {
+            String[] spelerArray = new String[3];
+            spelerArray[0] = speler.getGebruikersnaam();
+            spelerArray[1] = speler.getWachtwoord();
+            spelerArray[2] = String.valueOf(speler.getSaldo());
+            spelersArray.add(spelerArray);
+        }
+
+        csv.slaSpelersOp(spelersArray);
     }
 }

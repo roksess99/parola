@@ -78,3 +78,5 @@ T
 $src/test/java/utils/QuizCSVTest.java,1\8\18cc887b397e989de70e829fdf5f536acfafb8b9
 c
 3src/main/java/nl/han/oose/parola/utils/QuizCSV.java,7\5\751ea278ca50e769fc2314fa78db9aa8f57c8b3d
+e
+5src/main/java/nl/han/oose/parola/utils/SpelerCSV.java,3\6\36f066697a306f92f4beb95f7d1c61f93f36cf54

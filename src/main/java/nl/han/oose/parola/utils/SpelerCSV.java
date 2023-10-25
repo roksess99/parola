@@ -23,11 +23,11 @@ public class SpelerCSV {
         return Collections.emptyList();
     }
 
-    public void slaSpelersOp(List<Speler> spelers) {
+    public void slaSpelersOp(List<String[]> spelers) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-            for (Speler speler :
+            for (String[] speler :
                     spelers) {
-                writer.write(speler.getGebruikersnaam() + "," + speler.getWachtwoord() + "," + speler.getSaldo() + System.lineSeparator());
+                writer.write(speler[0] + "," + speler[1] + "," + speler[2] + System.lineSeparator());
             }
         } catch (IOException e) {
             e.printStackTrace();
