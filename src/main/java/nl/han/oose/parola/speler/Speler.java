@@ -10,17 +10,20 @@ public class Speler {
     private int saldo;
     private List<SpelerAntwoord> quizAntwoorden = new ArrayList<>();
 
-    public Speler (String spelernaam, String wachtwoord) {
+    public Speler (String spelernaam, String wachtwoord, int saldo) {
         this.gebruikersnaam = spelernaam;
         this.wachtwoord = wachtwoord;
+        this.saldo = saldo;
     }
 
     public void verlaagSaldo(int kosten){
         this.saldo -= kosten;
+        //sla op naar csv
     }
 
     public void verhoogSaldo(int nieuweCredits) {
         this.saldo += nieuweCredits;
+        //sla op naar csv
     }
 
     public void bewaarSpelerAntwoord(String antwoord, String vraagString){
@@ -51,5 +54,14 @@ public class Speler {
 
     public String getWachtwoord() {
         return wachtwoord;
+    }
+
+    public void setSaldo(int credits) {
+        this.saldo = credits;
+        //sla op naar csv
+    }
+
+    public int getSaldo() {
+        return this.saldo;
     }
 }

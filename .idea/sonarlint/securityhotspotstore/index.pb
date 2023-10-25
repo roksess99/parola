@@ -64,9 +64,17 @@ g
 7src/main/java/nl/han/oose/parola/controller/Parola.java,b\c\bcadd502be0f4f1044b1f3ca8bbcb8ad70f19796
 q
 Asrc/main/java/nl/han/oose/parola/controller/ParolaController.java,a\0\a01f273bfc5ee830245184b2bc233d8ed249dd73
-g
-7src/main/java/nl/han/oose/parola/utils/QuizScanner.java,c\2\c20c8c47b30902352edb4e1f2844501dd6947920
 o
 ?src/main/java/nl/han/oose/parola/creditwinkel/CreditWinkel.java,0\2\024aa2df658ee22dd684be73d4f7f863f5d82229
 `
 0src/main/java/nl/han/oose/parola/ParolaMain.java,5\7\573f28c7aa4e564f89b31a7e3113198a23bd0b94
+P
+ src/test/java/quiz/QuizTest.java,c\e\ce2b7880e11d1b5474b7837ee771100b5b1c5f73
+`
+0src/test/java/utils/GespeeldeQuizzenCSVTest.java,3\7\37e056d7e5d1ffe19367b3210e7b89b18cc76544
+o
+?src/main/java/nl/han/oose/parola/utils/GespeeldeQuizzenCSV.java,1\c\1c69519927420f98103a96ba4b0d97c633ed63b5
+T
+$src/test/java/utils/QuizCSVTest.java,1\8\18cc887b397e989de70e829fdf5f536acfafb8b9
+c
+3src/main/java/nl/han/oose/parola/utils/QuizCSV.java,7\5\751ea278ca50e769fc2314fa78db9aa8f57c8b3d

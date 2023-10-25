@@ -13,9 +13,13 @@ public class SpelerAntwoord {
     public SpelerAntwoord(String antwoord, String vraagString) {
         this.antwoord = antwoord;
         this.vraag = vraagString;
-        letter = antwoord.charAt(0);
+        if (!antwoord.isEmpty()) {
+            letter = antwoord.charAt(0);
+            letter = Character.toLowerCase(letter);
+        }
         if (Character.isDigit(letter)) {
             letter = vraag.charAt(0);
+            letter = Character.toLowerCase(letter);
         }
     }
 
@@ -32,7 +36,7 @@ public class SpelerAntwoord {
 
     private boolean isAntwoordCorrect(List<String> antwoorden) {
         for (String juistAntwoord : antwoorden) {
-            if (Objects.equals(juistAntwoord, this.antwoord)) {
+            if (Objects.equals(juistAntwoord.toLowerCase(), this.antwoord.toLowerCase())) {
                 return true;
             }
         }

@@ -29,5 +29,3 @@ public class ParolaMain {
         System.out.println("Score: " + score);
     }
 }
-
-

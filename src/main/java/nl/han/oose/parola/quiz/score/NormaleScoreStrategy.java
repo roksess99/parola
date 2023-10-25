@@ -13,6 +13,9 @@ public class NormaleScoreStrategy implements ScoreStrategy {
         score += (scoreWoord.length() * BONUSPUNTEN_SCOREWOORD);
         score -= (speelTijd * AFTREKPUNTEN_SECONDE_SPEELTIJD);
 
+        if (score < 0) {
+            score = 0;
+        }
         return score;
     }
 }

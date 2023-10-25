@@ -60,13 +60,13 @@ public class Quiz implements Observer {
     }
 
     public boolean isQuizAfgelopen(String spelernaam) {
-        return (getSpelerSpel(spelernaam).getVraagNr()) > quizVragen.size();
+        return (getSpelerSpel(spelernaam).getVraagNr()) > quizVragen.size() - 1;
     }
 
     public void bewaarSpelerAntwoord(Speler speler, String antwoord) {
         SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
         int vraagNr = spel.getVraagNr();
-        String vraagString = quizVragen.get(vraagNr).getVraag();
+        String vraagString = quizVragen.get(vraagNr-1).getVraag();
         speler.bewaarSpelerAntwoord(antwoord, vraagString);
     }
 

@@ -29,7 +29,9 @@ public class ParolaController {
         if (PAROLA.getSpeler(playername) == null) {
             PAROLA.registeerSpeler(playername, null);
         }
-        PAROLA.startQuiz(playername);
+        if (!PAROLA.startQuiz(playername)) {
+            System.exit(0);
+        }
     }
 
     public String nextQuestion(String playername) {
@@ -50,7 +52,11 @@ public class ParolaController {
     }
 
     public int calculateScore(String playername, String word) {
-        return PAROLA.geefScorewoord(playername, word);
+        Integer score = PAROLA.geefScorewoord(playername, word);
+        if (score.equals(null)) {
+            score = 0;
+        }
+        return score;
     }
 }
 

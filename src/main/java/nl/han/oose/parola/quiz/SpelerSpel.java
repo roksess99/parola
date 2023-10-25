@@ -17,7 +17,7 @@ public class SpelerSpel {
     }
 
     public int getSpeeltijd() {
-        return (((int) System.currentTimeMillis()) - starttijd);
+        return (int) ((( System.currentTimeMillis()) - starttijd)) / 1000;
     }
 
     public int getVraagNr() {

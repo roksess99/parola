@@ -62,6 +62,8 @@ public class Score {
             return false;
         }
 
+        woord = woord.toLowerCase();
+
         boolean[] isScoreLetterGebruikt = new boolean[scoreLetters.size()];
         Arrays.fill(isScoreLetterGebruikt, false);
 
@@ -70,7 +72,9 @@ public class Score {
 
             List<Integer> indexes = new ArrayList<>();
             for (int index = 0; index < scoreLetters.size(); index++) {
-                if (currentLetter == scoreLetters.get(index)) {
+                char scoreLetter = scoreLetters.get(index);
+                scoreLetter = Character.toLowerCase(scoreLetter);
+                if (currentLetter == scoreLetter) {
                     indexes.add(index);
                 }
             }
@@ -113,7 +117,7 @@ public class Score {
     }
 
     public List<Character> getScoreLetters(){
-        if (!bevattenLettersEenKlinker(scoreLetters)) {
+        if (!bevattenLettersEenKlinker(scoreLetters) && !scoreLetters.isEmpty()) {
             voegKlinkerToe();
         }
         return scoreLetters;

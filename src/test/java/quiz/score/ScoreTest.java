@@ -102,4 +102,25 @@ class ScoreTest {
 
         Assertions.assertNotSame(scoreletters, sut.getScoreLetters());
     }
+
+    @Test
+    void scoreLettersMetLowercaseGeeftGoedeScore() {
+        sut = new Score(0, "test", "testQuiz");
+        List<Character> scoreletters = new ArrayList<>();
+
+        scoreletters.add('i');
+        scoreletters.add('J');
+        scoreletters.add('W');
+        scoreletters.add('T');
+        scoreletters.add('L');
+        scoreletters.add('R');
+
+        for (char letter : scoreletters) {
+            sut.addScoreLetter(letter);
+        }
+
+        int score = sut.getScore("wit");
+        Assertions.assertNotNull(score);
+    }
+
 }

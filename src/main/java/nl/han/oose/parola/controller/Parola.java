@@ -5,7 +5,7 @@ import nl.han.oose.parola.quiz.Quiz;
 import nl.han.oose.parola.speler.Speler;
 import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
 import nl.han.oose.parola.utils.QuizCSV;
-import nl.han.oose.parola.utils.SpelerWriter;
+import nl.han.oose.parola.utils.SpelerCSV;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +23,13 @@ public class Parola {
 
     public Parola() {
         voegQuizzenUitCSVToe();
+        voegSpelersUitCSVToe();
     }
 
     public void registeerSpeler(String gebruikersnaam, String wachtwoord) {
-        Speler nieuweSpeler = new Speler(gebruikersnaam, wachtwoord);
+        Speler nieuweSpeler = new Speler(gebruikersnaam, wachtwoord, 1000);
         spelers.add(nieuweSpeler);
-        SpelerWriter writer = new SpelerWriter();
-        writer.registerSpeler(spelers);
+        slaSpelersOp();
     }
 
 
@@ -49,10 +49,13 @@ public class Parola {
 
     public void beantwoordVraag(String spelernaam, String antwoord){
         Speler speler = getSpeler(spelernaam);
+        if (antwoord == null || antwoord.isEmpty()) {
+            antwoord = "";
+        }
         huidigeQuiz.bewaarSpelerAntwoord(speler, antwoord);
     }
 
-    public void startQuiz(String spelernaam){
+    public boolean startQuiz(String spelernaam){
         Speler speler = getSpeler(spelernaam);
         boolean genoegCredits = speler.checkCredits();
         if (genoegCredits) {
@@ -60,8 +63,10 @@ public class Parola {
             speler.verlaagSaldo(quizKosten);
             huidigeQuiz = getOngespeeldeQuiz(spelernaam);
             huidigeQuiz.startSpeeltijd(spelernaam);
+            slaSpelersOp();
+            return true;
         }
-
+        return false;
     }
 
     public List<Character> verwerkAntwoorden(String spelernaam){
@@ -87,6 +92,7 @@ public class Parola {
         int nieuweCredits = creditWinkel.getHoeveelheid(bedrag);
         Speler speler = getSpeler(spelernaam);
         speler.verhoogSaldo(nieuweCredits);
+        slaSpelersOp();
     }
 
     public Speler getSpeler(String spelernaam) {
@@ -127,5 +133,19 @@ public class Parola {
             Quiz quiz = new Quiz(quiznaam);
             quizzen.add(quiz);
         }
+    }
+
+    private void voegSpelersUitCSVToe() {
+        SpelerCSV csv = new SpelerCSV();
+        List<String[]> spelers = csv.leesSpelers();
+        for (String[] speler : spelers) {
+            Speler nieuweSpeler = new Speler(speler[0], speler[1], Integer.parseInt(speler[2]));
+            this.spelers.add(nieuweSpeler);
+        }
+    }
+
+    private void slaSpelersOp() {
+        SpelerCSV csv = new SpelerCSV();
+        csv.slaSpelersOp(this.spelers);
     }
 }

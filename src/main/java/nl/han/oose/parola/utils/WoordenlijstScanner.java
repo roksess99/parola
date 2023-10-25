@@ -13,7 +13,7 @@ public class WoordenlijstScanner {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains(woord)) {
+                if (line.contains(woord.toLowerCase())) {
                     return true;
                 }
             }
