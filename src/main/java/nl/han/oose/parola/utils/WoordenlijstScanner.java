@@ -8,7 +8,7 @@ public class WoordenlijstScanner {
 
     public boolean staatWoordInWoordenlijst(String woord) {
         Scanner scanner = null;
-        try (FileInputStream file = new FileInputStream("src/main/resources/woordenlijst/basiswoorden-gekeurd.txt")){
+        try (FileInputStream file = new FileInputStream("src/main/resources/woordenlijst/basiswoorden-gekeurd.txt")) {
             scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {

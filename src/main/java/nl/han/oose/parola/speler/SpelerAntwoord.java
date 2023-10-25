@@ -19,8 +19,8 @@ public class SpelerAntwoord {
         }
     }
 
-    public Character getScoreLetter(List<String> antwoorden){
-        if (isAntwoordCorrect(antwoorden)){
+    public Character getScoreLetter(List<String> antwoorden) {
+        if (isAntwoordCorrect(antwoorden)) {
             return letter;
         }
         return null;
@@ -30,7 +30,7 @@ public class SpelerAntwoord {
         return vraag;
     }
 
-    private boolean isAntwoordCorrect(List<String> antwoorden){
+    private boolean isAntwoordCorrect(List<String> antwoorden) {
         for (String juistAntwoord : antwoorden) {
             if (Objects.equals(juistAntwoord, this.antwoord)) {
                 return true;

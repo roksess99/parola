@@ -4,6 +4,7 @@ import nl.han.oose.parola.speler.Speler;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class CreditWinkel {
     private HashMap<Integer, Double> tarieven;
@@ -33,7 +34,7 @@ public class CreditWinkel {
 
     public Integer getHoeveelheid(Double bedrag) {
         for (Map.Entry<Integer, Double> entry : tarieven.entrySet()) {
-            if (bedrag == entry.getValue()) {
+            if (Objects.equals(bedrag, entry.getValue())) {
                 return entry.getKey();
             }
         }

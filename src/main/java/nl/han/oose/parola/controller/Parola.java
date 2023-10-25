@@ -5,6 +5,7 @@ import nl.han.oose.parola.quiz.Quiz;
 import nl.han.oose.parola.speler.Speler;
 import nl.han.oose.parola.utils.GespeeldeQuizzenCSV;
 import nl.han.oose.parola.utils.QuizCSV;
+import nl.han.oose.parola.utils.SpelerWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +25,11 @@ public class Parola {
         voegQuizzenUitCSVToe();
     }
 
-    public void registeerSpeler(String gebruikersnaam, String wachtwoord){
+    public void registeerSpeler(String gebruikersnaam, String wachtwoord) {
         Speler nieuweSpeler = new Speler(gebruikersnaam, wachtwoord);
         spelers.add(nieuweSpeler);
-
-        //TODO sla nieuwe speler op in csv
+        SpelerWriter writer = new SpelerWriter();
+        writer.registerSpeler(spelers);
     }
 
 
