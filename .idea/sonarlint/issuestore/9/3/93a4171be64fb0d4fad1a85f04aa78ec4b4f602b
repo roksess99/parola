@@ -1,13 +1,15 @@
 
-_
-java:S2259D"BA "NullPointerException" could be thrown; "spel" is nullable here.(ƒ‘à¯8ØÅØ¯¶1
-n
-java:S2259?"LA "NullPointerException" could be thrown; "getSpelerSpel()" can return null.(Ë°òùÿÿÿÿ8ØÅØ¯¶1
-k
-java:S2259K"IA "NullPointerException" could be thrown; "spelerScore" is nullable here.(³Å³ÿÿÿÿÿ8×ÅØ¯¶1
 d
-java:S22599"BA "NullPointerException" could be thrown; "spel" is nullable here.(û×ÌÇüÿÿÿÿ8ØÅØ¯¶1
+java:S2259:"BA "NullPointerException" could be thrown; "spel" is nullable here.(û×ÌÇüÿÿÿÿ8·û—³¶1
+k
+java:S2259M"IA "NullPointerException" could be thrown; "spelerScore" is nullable here.(³Å³ÿÿÿÿÿ8·û—³¶1
+n
+java:S2259A"LA "NullPointerException" could be thrown; "getSpelerSpel()" can return null.(Ë°òùÿÿÿÿ8·û—³¶1
 _
-java:S2259)"BA "NullPointerException" could be thrown; "spel" is nullable here.(¥úü°8ØÅØ¯¶1
+java:S2259*"BA "NullPointerException" could be thrown; "spel" is nullable here.(¥úü°8·û—³¶1
+_
+java:S2259F"BA "NullPointerException" could be thrown; "spel" is nullable here.(ƒ‘à¯8·û—³¶1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ÿ ™³¶1
 G
-java:S1068"*Remove this unused "kosten" private field.(µ¼âÔ8êÅØ¯¶1
+java:S1068"*Remove this unused "kosten" private field.(µ¼âÔ8Äû—³¶1

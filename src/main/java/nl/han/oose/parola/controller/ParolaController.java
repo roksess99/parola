@@ -53,7 +53,7 @@ public class ParolaController {
 
     public int calculateScore(String playername, String word) {
         Integer score = PAROLA.geefScorewoord(playername, word);
-        if (score.equals(null)) {
+        if (score == null) {
             score = 0;
         }
         return score;

@@ -43,7 +43,7 @@ public class Parola {
         return false;
     }
 
-    public int geefScorewoord(String spelernaam, String woord){
+    public Integer geefScorewoord(String spelernaam, String woord){
         return huidigeQuiz.getScore(spelernaam, woord);
     }
 

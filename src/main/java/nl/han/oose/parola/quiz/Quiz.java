@@ -72,7 +72,7 @@ public class Quiz implements Observer {
         speler.bewaarSpelerAntwoord(antwoord, vraagString);
     }
 
-    public int getScore(String spelernaam, String woord) {
+    public Integer getScore(String spelernaam, String woord) {
         Score spelerScore = getSpelerScore(spelernaam);
         return spelerScore.getScore(woord);
     }
