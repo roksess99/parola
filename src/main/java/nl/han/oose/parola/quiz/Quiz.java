@@ -37,9 +37,10 @@ public class Quiz implements Observer {
     }
 
     public List<Character> verwerkAntwoorden(Speler speler){
-        SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
+        String naam = speler.getGebruikersnaam();
+        int speeltijd = getSpelerSpel(naam).getSpeeltijd();
 
-        Score score = new Score(spel.getSpeeltijd(), speler.getGebruikersnaam(), quizNaam);
+        Score score = new Score(speeltijd, naam, quizNaam);
         scores.add(score);
 
         for (Vraag vraag : quizVragen) {
@@ -66,7 +67,8 @@ public class Quiz implements Observer {
     }
 
     public void bewaarSpelerAntwoord(Speler speler, String antwoord) {
-        SpelerSpel spel = getSpelerSpel(speler.getGebruikersnaam());
+        String naam = speler.getGebruikersnaam();
+        SpelerSpel spel = getSpelerSpel(naam);
         int vraagNr = spel.getVraagNr();
         String vraagString = quizVragen.get(vraagNr-1).getVraag();
         speler.bewaarSpelerAntwoord(antwoord, vraagString);
